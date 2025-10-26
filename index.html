@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>InfinityCalc</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="top-nav">
+        <span class="top-tab active" onclick="showPage('home')">Home</span>
+        <span class="top-tab" onclick="showPage('about')">About</span>
+        <span class="top-tab" onclick="showPage('info')">Info</span>
+        <span class="top-tab" onclick="showPage('calc')">Calculator</span>
+    </div>
+
+    <section id="home-panel" class="main-section active">
+        <h1 class="main-title">Welcome to InfinityCalc</h1>
+        <p class="main-lead">
+            All the calculators you need, in one place.<br> 
+            Start exploring using the top menu!
+        </p>
+    </section>
+
+    <section id="about-panel" class="main-section">
+        <h1>About InfinityCalc</h1>
+        <p>
+            InfinityCalc is made for students and lifelong learners.<br>
+            It brings all your essential calculators together in one simple and easy-to-use space.
+        </p>
+    </section>
+ 
+    <section id="info-panel" class="main-section">
+        <h1>What's Inside?</h1>
+        <ul>
+            <li>Standard Calculator – perform basic math operations</li>
+            <li>Age Calculator – find age or difference between two dates</li>
+            <li>BMI Calculator – calculate Body Mass Index using metric or imperial units</li>
+            <li>Loan Calculator – analyze loan amount, interest rate, and time period</li>
+        </ul>
+    </section>
+
+
+    <div id="calc-panel" class="main-section">
+        <div class="inner-nav">
+            <span class="inner-tab active" onclick="showCalc('standard')">Standard</span>
+            <span class="inner-tab" onclick="showCalc('age')">Age</span>
+            <span class="inner-tab" onclick="showCalc('bmi')">BMI</span>
+            <span class="inner-tab" onclick="showCalc('loan')">Loan</span>
+        </div>
+
+        <div id="standard-section" class="calc-section active">
+            <div class="calculator standard-bg">
+                <h2>Standard Calculator</h2>
+                <input type="text" id="display" readonly>
+                <div class="buttons">
+                    <button onclick="press('7')">7</button>
+                    <button onclick="press('8')">8</button>
+                    <button onclick="press('9')">9</button>
+                    <button onclick="press('/')">÷</button>
+                    <button onclick="press('4')">4</button>
+                    <button onclick="press('5')">5</button>
+                    <button onclick="press('6')">6</button>
+                    <button onclick="press('*')">×</button>
+                    <button onclick="press('1')">1</button>
+                    <button onclick="press('2')">2</button>
+                    <button onclick="press('3')">3</button>
+                    <button onclick="press('-')">−</button>
+                    <button onclick="press('0')">0</button>
+                    <button onclick="press('.')">.</button>
+                    <button onclick="calculate()">=</button>
+                    <button onclick="press('+')">+</button>
+                    <button onclick="clearDisplay()">C</button>
+                </div>
+            </div>
+        
+            <div id="calc-history" class="history-panel">
+                <b>History:</b>
+                <button onclick="clearHistory()" class="clear-btn">Clear</button>
+                <ul id="history-list"></ul>
+            </div>
+        </div>
+
+        <div id="age-section" class="calc-section">
+            <div class="calculator age-bg">
+                <h2>Age Calculator</h2>
+                <label>Birthdate:</label>
+                <input type="date" id="birthdate"><br><br>
+                <label>Current date:</label>
+                <input type="date" id="currentdate"><br><br>
+                <button onclick="calculateAge()">Calculate Age</button><br><br>
+                <div id="age-result"></div>
+            </div>
+        </div>
+
+        <div id="bmi-section" class="calc-section">
+            <div class="calculator bmi-bg">
+                <h2>BMI Calculator</h2>
+                <label>Height:</label>
+                <input type="number" id="height" min="0" step="any" placeholder="Enter height"><br><br>
+                <label>Weight:</label>
+                <input type="number" id="weight" min="0" step="any" placeholder="Enter weight"><br><br>
+                <label>Units:</label>
+                <select id="bmi-units">
+                    <option value="metric">cm, kg</option>
+                    <option value="imperial">inches, pounds</option>
+                </select><br><br>
+                <button onclick="calculateBMI()">Calculate BMI</button><br><br>
+                <div id="bmi-result"></div>
+            </div>
+        </div>
+
+        <div id="loan-section" class="calc-section">
+            <div class="calculator loan-bg">
+                <h2>Loan Calculator</h2>
+                <label>Principal amount:</label>
+                <input type="number" id="loan-principal" min="0" step="any" placeholder="Enter principal"><br><br>
+                <label>Interest rate (%):</label>
+                <input type="number" id="loan-rate" min="0" step="any" placeholder="Enter interest rate"><br><br>
+                <label>Duration (years):</label>
+                <input type="number" id="loan-years" min="0" step="1" placeholder="Enter years"><br><br>
+                <button onclick="calculateLoan()">Calculate Loan</button><br><br>
+                <div id="loan-result"></div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/script.js"></script>
+</body>
+</html>
