@@ -180,12 +180,27 @@ body {
     padding: 25px;
     background: #fafafa;
 }
-#display { width: 90%; height: 35px; margin-bottom: 20px; padding: 5px; font-size: 20px; text-align: right; }
+#display { 
+    width: 90%; 
+    height: 35px; 
+    margin-bottom: 20px; 
+    padding: 5px;
+    font-size: 20px;
+    text-align: right;
+} 
+
 .buttons button {
-    width: 48px; height: 40px; margin: 2px; font-size: 18px; border-radius: 5px; border: 1px solid #bbb;
-    background: #f0f0f0; cursor: pointer;
+    width: 48px; 
+    height: 40px;
+    margin: 2px;
+    font-size: 18px;
+    border-radius: 5px;
+    border: 1px solid #bbb;
+    background: #f0f0f0; 
+    cursor: pointer;
 }
-.buttons button:hover { background: #d0d0ff; color: #223388; }
+.buttons button:hover { background: #d0d0ff; 
+                       color: #223388; }
 .buttons button:active { background: #ddd; }
 
  
